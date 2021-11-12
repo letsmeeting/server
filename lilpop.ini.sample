@@ -1,0 +1,71 @@
+[CORE]
+
+[TIMER]
+IdleTimeout = 10    # IDLE timeout (sec)
+
+[NET]
+EnableHttp = true
+EnableGrpc = false
+EnableTcp = false
+EnableSerial = false
+EnableMqueue = false
+
+[LOG]
+EnableDebug = true
+EnableInfo  = true
+EnableError = true
+LogFile     = dist/log/lilpop.log
+MaxSize     = 1     # megabytes
+MaxBackups  = 10    # old backup file count
+MaxAge      = 1     # days
+LocalTime   = true
+Compress    = false
+
+[DATABASE]
+Type        = mysql
+UserId      = user
+Password    = password
+IpAddress   = kredi-db
+Port        = 3306
+DbName      = lilpop
+DbNameLog   = logs
+# MongoDB
+MongoAddr = 127.0.0.1
+MongoPort = 27017
+MongoAuth = true
+MongoId = mongo
+MongoPwd = mongo
+# Redis
+RedisAddr = lilpop
+RedisPort = 6379
+
+[TEST]
+EnableSwagger   = true
+
+[Lilpop]
+Enabled = true          # application enable/disable
+EnableHttpServer = true
+EnableWebsocketServer = true
+EnableGrpcServer = false
+EnableTcpServer = false
+EnableSerial = false
+EnableMqueue = false
+EnableMongoDb = false
+EnableRedis = true
+
+EnableSSL = false
+HttpListenAddr = localhost
+HttpServerPort = 1323   # web server
+WebsocketServerPort = 1324
+GrpcServerPort = 1325
+SslCertFile = /etc/ssl/lilpop.crt
+SslKeyFile = /etc/ssl/lilpop.kry
+
+TcpServerPort_Lilpop = 9900  # TCP/IP listening port - from Lilpop module
+TcpClientPort_Lilpop = 9901  # TCP/IP client port - to center
+
+SwaggerPort = 1323
+
+# Google API
+GoogleClientId = googleusercontent.com
+GoogleClientSecret = ujDQosvTa

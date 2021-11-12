@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+option go_package = "almcm.poscoict.com/scm/pme/posgo/communication/grpc/example";
+
+import "google/protobuf/timestamp.proto";
+
+service User {
+	rpc GetUser(GetUserRequest) returns (GetUserResponse);
+	rpc ListUser(ListUserRequest) returns (ListUserResponse);
+}
+
+message UserInfo {
+	string UserId = 1;
+	string Name = 2;
+	google.protobuf.Timestamp CreateAt = 3;
+}
+
+message GetUserRequest {
+	string UserId = 1;	
+}
+
+message GetUserResponse {
+	UserInfo info = 1;
+}
+
+message ListUserRequest {
+
+}
+
+message ListUserResponse {
+	repeated UserInfo infos = 1;
+}
+
